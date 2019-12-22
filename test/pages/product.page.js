@@ -1,10 +1,10 @@
 const Page = require('./page')
 class ProductPage extends Page {
-  get free_download_clean_my_mac_x_button () { return $("[data-qa='FreeDownloadBtn']") }
-  get email_modal () { return $('.modal-content') }
-  get set_email_field () { return $$("//div[@class='dlm-box']//input[@placeholder='Введите ваш адрес e-mail…']")[0] }
-  get submit_mail_subscription_button () { return $$("//button[@class='btn -large']")[0] }
-  get successful_subscription () { return $('.successful_subscription') }
+  get freeDownloadCleanMyMacXButton () { return $("[data-qa='FreeDownloadBtn']") }
+  get setEmailField () { return $$("[name='email']")[1] }
+  get submitMailSubscriptionButton () { return $$("[data-qa='subscribeBtn']")[1] }
+  get successfulSubscription () { return $('.modal-content') }
+  get successfulSubscriptionThanksPage() {return $('.subscribe-ok')}
   open () {
     super.open('/cleanmymac')
   }

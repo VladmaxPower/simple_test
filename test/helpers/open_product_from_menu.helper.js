@@ -1,4 +1,4 @@
-const HomePage = require('../pages/home.page')
+const HomePage = require('../pages/home.page.js')
 
 class OpenProductFromMenuHelper {
   constructor () {
@@ -7,15 +7,15 @@ class OpenProductFromMenuHelper {
 
   openProductPage (product) {
     if (product === 'cleanMyMacX') {
-      OpenProductFromMenuHelper.cleanMyMacX()
+    this.cleanMyMacX()
     }
   }
 
-  static cleanMyMacX () {
-    HomePage.menu_button.waitForExist(3000)
-    HomePage.menu_button.click()
-    HomePage.clean_my_mac_x_button.waitForExist(2000)
-    HomePage.clean_my_mac_x_button.click()
+  cleanMyMacX () {
+    HomePage.menuButton.waitForExist(3000)
+    HomePage.menuButton.click()
+    HomePage.cleanMyMacButton.waitForExist(2000)
+    HomePage.cleanMyMacButton.click()
   }
 }
 

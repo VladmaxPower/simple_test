@@ -5,12 +5,12 @@ class DownloadProductHelper {
   }
 
   downloadWithSubscription (email) {
-    ProductPage.free_download_clean_my_mac_x_button.waitForExist(3000)
-    ProductPage.free_download_clean_my_mac_x_button.click()
-    ProductPage.email_modal.waitForExist(2000)
-    ProductPage.set_email_field.setValue(email)
-    ProductPage.submit_mail_subscription_button.waitForExist(2000)
-    ProductPage.submit_mail_subscription_button.click()
+    ProductPage.freeDownloadCleanMyMacXButton.waitForExist(3000)
+    ProductPage.freeDownloadCleanMyMacXButton.click()
+    ProductPage.setEmailField.waitForExist(2000)
+    ProductPage.setEmailField.setValue(email)
+    ProductPage.submitMailSubscriptionButton.waitForExist(2000)
+    ProductPage.submitMailSubscriptionButton.click()
   }
 }
 

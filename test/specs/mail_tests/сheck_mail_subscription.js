@@ -6,9 +6,9 @@ describe('Check mail subscription', function () {
     Go.HomePage.open();
     (new Go.OpenProductFromMenu()).openProductPage('cleanMyMacX');
     (new Go.DownloadProductHelper()).downloadWithSubscription(email)
-    expect(Go.ProductPage.successful_subscription.isDisplayed()).to.eq(true, 'can`t search successful subscription modal')
+    Go.ProductPage.successfulSubscription.waitForExist(3000);
     browser.url((new Go.MailHelper()).findMailsInBox(email))
-    expect(Go.ProductPage.successful_subscription.isDisplayed()).to.eq(true, 'can`t search successful subscription modal in successful page')
-    expect(Go.SuccessfulSubscriptionPage.successful_subscription_text.getText()).to.eq('Спасибо за подписку!\nLet’s get social. We’re always on.')
-  })
-})
+    Go.ProductPage.successfulSubscriptionThanksPage.waitForExist(3000);
+    expect(Go.SuccessfulSubscriptionPage.successfulSubscriptionText.getText()).to.eq('Thanks for signing up!\nLet’s get social. We’re always on.')
+  });
+});

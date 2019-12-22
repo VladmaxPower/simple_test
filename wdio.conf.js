@@ -42,7 +42,6 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -58,7 +57,11 @@ exports.config = {
     'goog:chromeOptions': {
       // to run chrome headless the following flags are required
       // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-      args: ['--headless', '--start-maximized', '--incognito', '--lang=en']
+      args: ['--incognito'],
+      prefs: {
+        'intl.accept_languages': 'en,EN'
+
+      }
     }
   }],
   //
@@ -132,6 +135,7 @@ exports.config = {
     global.expect = chai.expect
     const faker = require('faker')
     global.faker = faker
+    browser.maximizeWindow();
   },
 
   afterTest: function (test) {
